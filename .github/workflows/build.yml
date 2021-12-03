@@ -64,10 +64,10 @@ jobs:
         build-args: |
           ARTIFACT_NAME=${{ steps.docker.outputs.ARTIFACT_NAME }}
           IMAGE_VERSION=${{ steps.docker.outputs.IMAGE_NAME }}:${{ steps.docker.outputs.MAJOR_VERSION }}.${{ steps.docker.outputs.MINOR_VERSION }}.${{ steps.buildnumber.outputs.build_number }}
-#     - name: Docker Hub Description
-#       uses: peter-evans/dockerhub-description@v2
-#       env:
-#         DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-#         DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-#         DOCKERHUB_REPOSITORY: geekymon2/${{ steps.docker.outputs.IMAGE_NAME }}   
-#         README_FILEPATH: service/README.md  
+    - name: Docker Hub Description
+      uses: peter-evans/dockerhub-description@v2
+      env:
+        DOCKERHUB_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKERHUB_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKERHUB_REPOSITORY: fedormoore/${{ steps.docker.outputs.IMAGE_NAME }}   
+        README_FILEPATH: service/README.md  
