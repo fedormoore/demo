@@ -15,7 +15,7 @@ jobs:
       id: buildnumber
       uses: einaregilsson/build-number@v3
       with:
-        token: ${{secrets.github_token}}  
+        token: ${{secrets.G_TOKEN}}  
     - name: Проверяем доступ к frontend  
       uses: actions/checkout@v2
       with:
