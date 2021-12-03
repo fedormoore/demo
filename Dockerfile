@@ -27,6 +27,7 @@
 #контейнера в той же сети докера).
 
 FROM adoptopenjdk/openjdk11
+WORKDIR /src
 LABEL maintainer="fedormoore@gmail.com"
 ARG ARTIFACT_NAME
 ARG IMAGE_VERSION
