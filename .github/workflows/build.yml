@@ -58,8 +58,8 @@ jobs:
         context: ./service
         push: true
         tags: |
-          geekymon2/${{ steps.docker.outputs.IMAGE_NAME }}:${{ steps.docker.outputs.MAJOR_VERSION }}.${{ steps.docker.outputs.MINOR_VERSION }}.${{ steps.buildnumber.outputs.build_number }}
-          geekymon2/${{ steps.docker.outputs.IMAGE_NAME }}:latest
+          fedormoore/${{ steps.docker.outputs.IMAGE_NAME }}:${{ steps.docker.outputs.MAJOR_VERSION }}.${{ steps.docker.outputs.MINOR_VERSION }}.${{ steps.buildnumber.outputs.build_number }}
+          fedormoore/${{ steps.docker.outputs.IMAGE_NAME }}:latest
         labels: ${{ steps.meta.outputs.labels }}
         build-args: |
           ARTIFACT_NAME=${{ steps.docker.outputs.ARTIFACT_NAME }}
