@@ -27,7 +27,9 @@
 #контейнера в той же сети докера).
 
 FROM adoptopenjdk/openjdk11
+ADD . /src
 WORKDIR /src
+RUN ./mvnw package -DskipTests
 LABEL maintainer="fedormoore@gmail.com"
 ARG ARTIFACT_NAME
 ARG IMAGE_VERSION
