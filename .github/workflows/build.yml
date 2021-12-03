@@ -54,16 +54,16 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
     - name: Публикация образа
       uses: docker/build-push-action@v2
-      with:
-        context: ./service
-        push: true
-        tags: |
-          fedormoore/${{ steps.docker.outputs.IMAGE_NAME }}:${{ steps.docker.outputs.MAJOR_VERSION }}.${{ steps.docker.outputs.MINOR_VERSION }}.${{ steps.buildnumber.outputs.build_number }}
-          fedormoore/${{ steps.docker.outputs.IMAGE_NAME }}:latest
-        labels: ${{ steps.meta.outputs.labels }}
-        build-args: |
-          ARTIFACT_NAME=${{ steps.docker.outputs.ARTIFACT_NAME }}
-          IMAGE_VERSION=${{ steps.docker.outputs.IMAGE_NAME }}:${{ steps.docker.outputs.MAJOR_VERSION }}.${{ steps.docker.outputs.MINOR_VERSION }}.${{ steps.buildnumber.outputs.build_number }}
+#       with:
+#         context: ./service
+#         push: true
+#         tags: |
+#           fedormoore/${{ steps.docker.outputs.IMAGE_NAME }}:${{ steps.docker.outputs.MAJOR_VERSION }}.${{ steps.docker.outputs.MINOR_VERSION }}.${{ steps.buildnumber.outputs.build_number }}
+#           fedormoore/${{ steps.docker.outputs.IMAGE_NAME }}:latest
+#         labels: ${{ steps.meta.outputs.labels }}
+#         build-args: |
+#           ARTIFACT_NAME=${{ steps.docker.outputs.ARTIFACT_NAME }}
+#           IMAGE_VERSION=${{ steps.docker.outputs.IMAGE_NAME }}:${{ steps.docker.outputs.MAJOR_VERSION }}.${{ steps.docker.outputs.MINOR_VERSION }}.${{ steps.buildnumber.outputs.build_number }}
 #     - name: Docker Hub Description
 #       uses: peter-evans/dockerhub-description@v2
 #       env:
