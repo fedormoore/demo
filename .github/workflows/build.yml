@@ -56,5 +56,5 @@ jobs:
           path: service
       - name: run deployment script
         run: service/deploy.sh ci
-        working-directory: ./service
+#        working-directory: ./service
     needs: buildservice
