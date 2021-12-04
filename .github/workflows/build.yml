@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Получаем доступ к репозиторию
-      uses: actions/checkout@v2     
+      uses: actions/checkout@v2
       with:
         path: service
     - name: Читаем настройки docker
@@ -26,7 +26,7 @@ jobs:
       with:
         java-version: '11'
         distribution: 'adopt'
-        cache: maven 
+        cache: maven
     - name: Собираем jar
       run: mvn -B package --file service/pom.xml
     - name: Логин к dockerhub
@@ -55,6 +55,6 @@ jobs:
         with:
           path: service
       - name: run deployment script
-        run: ./deploy.sh ci
+        run: service/deploy.sh ci
         working-directory: ./service
     needs: buildservice
