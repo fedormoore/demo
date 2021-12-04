@@ -16,7 +16,7 @@ else
 fi
 
 
-echo "Starting Deployment for Image: $IMAGE_NAME."
+echo "Starting Deployment for Image: $IMAGE_NAME:$MAJOR_VERSION.$MINOR_VERSION"
 echo "- Creating Environment Variables"
 printf "ENVIRONMENT=$ENV\nSPRING_PROFILES_ACTIVE=$ENV" >> .env
 echo "- Loading Environment Variables"
@@ -27,7 +27,7 @@ fi
 echo "- Stopping containers"
 docker-compose -f "docker-compose.yml" stop
 echo "- Pull the latest docker image"
-docker pull "fedormoore/$IMAGE_NAME"
+docker pull "fedormoore/$IMAGE_NAME:$MAJOR_VERSION.$MINOR_VERSION"
 echo "- Starting Container"
 docker-compose -f "docker-compose.yml" up -d
 echo "- Deployment Complete."
