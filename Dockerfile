@@ -32,7 +32,7 @@ ARG ARTIFACT_NAME
 ARG IMAGE_VERSION
 EXPOSE 80
 COPY target/${ARTIFACT_NAME}*.jar ${ARTIFACT_NAME}.jar
-#RUN printf "IMAGE_VERSION=${IMAGE_VERSION}" > version.properties
+RUN printf "IMAGE_VERSION=${IMAGE_VERSION}" "ARTIFACT_NAME=${ARTIFACT_NAME}"> version.properties
 #RUN printf "ARTIFACT_NAME=${ARTIFACT_NAME}" > version.properties
 COPY entrypoint.sh ./entrypoint.sh
 RUN chmod +x ./entrypoint.sh
