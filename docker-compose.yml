@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3.3"
 services:
   db:
     image: postgres:12.3
@@ -51,7 +51,7 @@ services:
     networks:
       - postgres
   frontend:
-    image: testjava:1
+    image: testjava:1.0
     container_name: appfrontend
     ports:
       - 80:80
