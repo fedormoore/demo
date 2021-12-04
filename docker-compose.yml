@@ -43,11 +43,11 @@ services:
     ports:
       - 54322:5432
     restart: always
-    deploy:
-      resources:
-        limits:
-          cpus: '1'
-          memory: 1G
+#    deploy:
+#      resources:
+#        limits:
+#          cpus: '1'
+#          memory: 1G
     networks:
       - postgres
   frontend:
@@ -58,11 +58,11 @@ services:
     environment:
       POSTGRES_HOST: db
     restart: always
-    deploy:
-      resources:
-        limits:
-          cpus: '1'
-          memory: 1G
+#    deploy:
+#      resources:
+#        limits:
+#          cpus: '1'
+#          memory: 1G
     links:
       - db
     networks:
