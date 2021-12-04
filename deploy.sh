@@ -1,3 +1,4 @@
+#! /bin/bash
 ENV=$1
 
 if [ -z "$ENV" ]
