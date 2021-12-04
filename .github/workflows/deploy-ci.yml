@@ -1,0 +1,16 @@
+name: deploy ci
+on:
+  workflow_dispatch:
+jobs:
+  deployservice:
+    environment: ci
+    name: deploy CI
+    runs-on: [self-hosted, ci]
+    steps:
+      - name: checkout service
+        uses: actions/checkout@v2
+        with:
+          path: service
+      - name: run deployment script
+        run: ./deploy.sh ci
+        working-directory: ./service
