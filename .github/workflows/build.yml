@@ -1,8 +1,8 @@
 name: build and deploy
 
 on:
-  push:
-    branches: [ main ]
+#  push:
+#    branches: [ main ]
   pull_request:
     branches: [ main ]
 
@@ -28,7 +28,7 @@ jobs:
         distribution: 'adopt'
         cache: maven
     - name: Собираем jar
-      run: mvn -B package --file service/pom.xml
+      run: mvn install --file root/pom.xml
     - name: Логин к dockerhub
       uses: docker/login-action@v1
       with:
